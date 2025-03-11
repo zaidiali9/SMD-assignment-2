@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Assignment2</string>
+    <string name="profile_picture">Profile Picture</string>
+    <string name="personal_details">Personal Details</string>
+    <string name="summary">Summary</string>
+    <string name="education">Education</string>
+    <string name="experience">Experience</string>
+    <string name="certifications">Certifications</string>
+    <string name="references">References</string>
 </resources>

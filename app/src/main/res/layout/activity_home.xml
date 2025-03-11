@@ -1,10 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Home">
+    tools:context=".Home"
+    android:orientation="vertical"
+    android:background="@color/pink"
+    >
+    <Button
+        android:layout_width="300dp"
+        android:layout_gravity="center"
+        android:text="@string/profile_picture"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/white"
+        android:layout_marginTop="40dp"
+        android:paddingVertical="20dp"
+        android:textSize="20sp"
+        android:id="@+id/profile_picture"
+        />
+    <Button
+        android:layout_width="300dp"
+        android:layout_gravity="center"
+        android:text="@string/personal_details"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/white"
+        android:layout_marginTop="20dp"
+        android:paddingVertical="20dp"
+        android:textSize="20sp"
+        android:id="@+id/personal_details"
+        />
+    <Button
+        android:layout_width="300dp"
+        android:layout_gravity="center"
+        android:text="@string/summary"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/white"
+        android:layout_marginTop="20dp"
+        android:paddingVertical="20dp"
+        android:textSize="20sp"
+        android:id="@+id/summary"
+        />
+    <Button
+        android:layout_width="300dp"
+        android:layout_gravity="center"
+        android:text="@string/education"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/white"
+        android:layout_marginTop="20dp"
+        android:paddingVertical="20dp"
+        android:textSize="20sp"
+        android:id="@+id/education"
+        />
+    <Button
+        android:layout_width="300dp"
+        android:layout_gravity="center"
+        android:text="@string/experience"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/white"
+        android:layout_marginTop="20dp"
+        android:paddingVertical="20dp"
+        android:textSize="20sp"
+        android:id="@+id/experience"
+        />
+    <Button
+        android:layout_width="300dp"
+        android:layout_gravity="center"
+        android:text="@string/certifications"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/white"
+        android:layout_marginTop="20dp"
+        android:paddingVertical="20dp"
+        android:textSize="20sp"
+        android:id="@+id/certifications"
+        />
+    <Button
+        android:layout_width="300dp"
+        android:layout_gravity="center"
+        android:text="@string/references"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/white"
+        android:layout_marginTop="20dp"
+        android:paddingVertical="20dp"
+        android:textSize="20sp"
+        android:id="@+id/references"
+        />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</LinearLayout>

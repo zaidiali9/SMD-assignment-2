@@ -1,6 +1,7 @@
 package com.example.assignment2;
 
 import android.os.Bundle;
+import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,6 +11,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class Home extends AppCompatActivity {
 
+    Button profilePicture, personalDetails, summary, education, experience, certification, references;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,5 +22,16 @@ public class Home extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        init();
+    }
+
+    private void init(){
+        profilePicture = findViewById(R.id.profile_picture);
+        personalDetails = findViewById(R.id.personal_details);
+        summary = findViewById(R.id.summary);
+        education = findViewById(R.id.education);
+        experience = findViewById(R.id.experience);
+        certification = findViewById(R.id.certifications);
+        references = findViewById(R.id.references);
     }
 }
