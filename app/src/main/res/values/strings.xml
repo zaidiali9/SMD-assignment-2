@@ -7,4 +7,15 @@
     <string name="experience">Experience</string>
     <string name="certifications">Certifications</string>
     <string name="references">References</string>
+    <string name="enter_experience">Enter Experience</string>
+    <string name="enter_certifications">Enter Certifications</string>
+    <string name="enter_reference">Enter Reference</string>
+    <string name="enter_education">Enter Education</string>
+    <string name="enter_personal_details">Enter Personal Details</string>
+    <string name="enter_your_name">Enter your name</string>
+    <string name="enter_your_phone_number">Enter your Phone Number</string>
+    <string name="enter_your_email">Enter your email</string>
+    <string name="submit">Submit</string>
+    <string name="cancel">Cancel</string>
+    <string name="enter_your_summary">Enter your Summary</string>
 </resources>
