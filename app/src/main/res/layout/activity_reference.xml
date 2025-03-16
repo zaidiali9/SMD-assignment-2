@@ -25,6 +25,7 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_marginHorizontal="20dp"
+        android:id="@+id/reference_edit_text"
         />
     <LinearLayout
         style="?android:attr/buttonBarStyle"
@@ -34,7 +35,7 @@
         >
 
         <Button
-            android:id="@+id/cancel_button"
+            android:id="@+id/cancel_button_reference"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/cancel"
@@ -43,7 +44,7 @@
             />
 
         <Button
-            android:id="@+id/submit_button"
+            android:id="@+id/submit_button_referece"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/submit"

@@ -16,7 +16,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class Home extends AppCompatActivity {
 
-    Button profilePicture, personalDetails, summary, education, experience, certification, references;
+    Button profilePicture, personalDetails, summary, education, experience, certification, references, preview;
     ActivityResultLauncher<Intent> getImageLauncher, getPersonalDetailsLauncher, getSummaryLauncher, getEducationLauncher, getExperienceLauncher, getCertificationLauncher, getReferencesLauncher;
     Uri imageUri;
     String name, email, phone, address, summaryText, educationText, experienceText, certificationText, referencesText;
@@ -32,6 +32,7 @@ public class Home extends AppCompatActivity {
         });
         init();
         profilePicture.setOnClickListener(v -> setImage());
+        preview.setOnClickListener(v -> setPreview());
         personalDetails.setOnClickListener(v -> {
             Intent intent = new Intent(this, PersonalDetails.class);
             getPersonalDetailsLauncher.launch(intent);
@@ -71,6 +72,7 @@ public class Home extends AppCompatActivity {
         experience = findViewById(R.id.experience);
         certification = findViewById(R.id.certifications);
         references = findViewById(R.id.references);
+        preview = findViewById(R.id.Preview);
         getImageLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), (result) ->{
             if(result.getResultCode() == RESULT_OK && result.getData() != null){
                 imageUri = result.getData().getData();
@@ -82,9 +84,8 @@ public class Home extends AppCompatActivity {
         getPersonalDetailsLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), (result) ->{
             if(result.getResultCode() == RESULT_OK && result.getData() != null){
                 name = result.getData().getStringExtra("name");
-                email = result.getData().getStringExtra("email");
-                phone = result.getData().getStringExtra("phone");
-                address = result.getData().getStringExtra("address");
+                email = result.getData().getStringExtra("emailAddress");
+                phone = result.getData().getStringExtra("phoneNumber");
             }
             else if(result.getResultCode() == RESULT_CANCELED){
                 Toast.makeText(this, "No personal details entered", Toast.LENGTH_SHORT).show();
@@ -92,7 +93,7 @@ public class Home extends AppCompatActivity {
         });
         getSummaryLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), (result) ->{
             if(result.getResultCode() == RESULT_OK && result.getData() != null){
-                summaryText = result.getData().getStringExtra("summary");
+                summaryText = result.getData().getStringExtra("summaryText");
             }
             else if(result.getResultCode() == RESULT_CANCELED){
                 Toast.makeText(this, "No summary entered", Toast.LENGTH_SHORT).show();
@@ -100,7 +101,7 @@ public class Home extends AppCompatActivity {
         });
         getEducationLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), (result) ->{
             if(result.getResultCode() == RESULT_OK && result.getData() != null){
-                educationText = result.getData().getStringExtra("education");
+                educationText = result.getData().getStringExtra("educationText");
             }
             else if(result.getResultCode() == RESULT_CANCELED){
                 Toast.makeText(this, "No education entered", Toast.LENGTH_SHORT).show();
@@ -108,7 +109,7 @@ public class Home extends AppCompatActivity {
         });
         getExperienceLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), (result) ->{
             if(result.getResultCode() == RESULT_OK && result.getData() != null){
-                experienceText = result.getData().getStringExtra("experience");
+                experienceText = result.getData().getStringExtra("experienceText");
             }
             else if(result.getResultCode() == RESULT_CANCELED){
                 Toast.makeText(this, "No experience entered", Toast.LENGTH_SHORT).show();
@@ -117,7 +118,7 @@ public class Home extends AppCompatActivity {
 
         getCertificationLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), (result) ->{
             if(result.getResultCode() == RESULT_OK && result.getData() != null){
-                certificationText = result.getData().getStringExtra("certification");
+                certificationText = result.getData().getStringExtra("certificationText");
             }
             else if(result.getResultCode() == RESULT_CANCELED){
                 Toast.makeText(this, "No certification entered", Toast.LENGTH_SHORT).show();
@@ -126,7 +127,7 @@ public class Home extends AppCompatActivity {
 
         getReferencesLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), (result) ->{
             if(result.getResultCode() == RESULT_OK && result.getData() != null){
-                referencesText = result.getData().getStringExtra("references");
+                referencesText = result.getData().getStringExtra("referenceText");
             }
             else if(result.getResultCode() == RESULT_CANCELED){
                 Toast.makeText(this, "No references entered", Toast.LENGTH_SHORT).show();
@@ -137,5 +138,19 @@ public class Home extends AppCompatActivity {
         Intent intent = new Intent(Intent.ACTION_PICK);
         intent.setType("image/*");
         getImageLauncher.launch(intent);
+    }
+    private void setPreview(){
+        Intent intent = new Intent(this, Preview.class);
+        intent.putExtra("imageUri", imageUri.toString());
+        intent.putExtra("name", name);
+        intent.putExtra("email", email);
+        intent.putExtra("phone", phone);
+        intent.putExtra("address", address);
+        intent.putExtra("summary", summaryText);
+        intent.putExtra("education", educationText);
+        intent.putExtra("experience", experienceText);
+        intent.putExtra("certification", certificationText);
+        intent.putExtra("references", referencesText);
+        startActivity(intent);
     }
 }

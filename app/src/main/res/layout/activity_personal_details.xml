@@ -26,21 +26,24 @@
         android:layout_height="50dp"
         android:layout_marginHorizontal="20dp"
         android:layout_margin="10dp"
-        android:text="@string/enter_your_name"
+        android:hint="@string/enter_your_name"
+        android:id="@+id/name"
         />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginHorizontal="20dp"
         android:layout_margin="10dp"
-        android:text="@string/enter_your_phone_number"
+        android:hint="@string/enter_your_phone_number"
+        android:id="@+id/phoneNumber"
         />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginHorizontal="20dp"
         android:layout_margin="10dp"
-        android:text="@string/enter_your_email"
+        android:hint="@string/enter_your_email"
+        android:id="@+id/email"
         />
     <LinearLayout
         style="?android:attr/buttonBarStyle"
